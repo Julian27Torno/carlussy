@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .main__container {
+            width: 100vw;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #ffffff;
+            border: 1px solid #0288d1;
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            background-color: #ffe5e5;
+            border: 1px solid #ffcccc;
+            color: #d8000c;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #0288d1;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #0288d1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #01579b;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0288d1;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #01579b;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #0288d1;
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h2>Login</h2>
+
+        {{#errors}}
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                {{#errors}}
+                    <li>{{.}}</li>
+                {{/errors}}
+            </ul>
+        </div>
+        {{/errors}}
+
+        <form action="/" method="post">
+            <div>
+                <label for="email">Email (required):</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+    
+            <div>
+                <label for="password">Password (required):</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div class="button-container">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal for successful login -->
+    <div id="loginSuccessModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome!</h2>
+            <p>You have successfully logged in.</p>
+        </div>
+    </div>
+
+    <script>
+        // Check if the login was successful from the session
+        window.onload = function() {
+            <?php if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true): ?>
+                // Show the modal
+                var modal = document.getElementById("loginSuccessModal");
+                var span = document.getElementsByClassName("close")[0];
+
+                modal.style.display = "block";
+
+                // Close the modal when the user clicks the close button
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Close the modal if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                // Reset the session flag after showing the popup
+                <?php unset($_SESSION['login_success']); ?>
+            <?php endif; ?>
+        }
+    </script>
+</body>
+</html>

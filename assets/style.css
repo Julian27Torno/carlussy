@@ -1,0 +1,145 @@
+/* order-page/style.css */
+
+/* Set the background image for the entire page and make it fixed */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('');
+  background-size: cover; /* Ensures the image covers the entire page */
+  background-position: center center; /* Centers the image */
+  background-attachment: fixed; /* Makes the background fixed when scrolling */
+  color: #EBD9C1;
+  margin: 0;
+  padding: 0;
+
+  /* Set a warm coffee background color */
+  background-color: #EBD9C1; /* Coffee brown color */
+  background-blend-mode: multiply; /* Blends the image with the color */
+}
+
+/* Content container with a more neutral beige color that blends better */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #d7c8a3; /* Soft beige/taupe color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #5a3d29;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+p.description {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Tabs Navigation */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-link {
+  background-color: #5a3d29; /* Coffee color for tab buttons */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.tab-link:hover {
+  background-color: #4a2f1a;
+}
+
+.tab-link:active {
+  background-color: #3b241a;
+}
+
+/* Coffee Sections */
+.coffee-section {
+  display: none;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: #5a3d29;
+  margin-bottom: 20px;
+}
+
+.coffee-options {
+  display: flex;
+  justify-content: center;  /* Centers the content horizontally */
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.coffee-option {
+  width: 250px;
+  text-align: center;
+  margin: 10px;
+}
+
+.coffee-option img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.price {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4a2f1a;
+}
+
+.order-btn {
+  background-color: #5a3d29;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.order-btn:hover {
+  background-color: #4a2f1a;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #5a3d29;
+}
+
+.footer a {
+  color: #5a3d29;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coffee-options {
+      flex-direction: column; /* Stack the options vertically on smaller screens */
+      align-items: center;
+  }
+  .coffee-option {
+      width: 80%; /* Adjust width for smaller screens */
+  }
+}

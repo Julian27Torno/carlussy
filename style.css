@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background: #EBD9C1;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.navbar .logo {
+    padding-left: 200px;
+    position: relative;
+
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h2 {
+    color: #333;
+    font-size: 3.5em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span {
+    color: #230C02;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.content .textBox p {
+    color: #333;
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #230C02;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.content .textBox a:hover {
+    color: yellow;
+    text-decoration: wavy;
+    transform: scale(1.05);
+}
+
+.content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.content .imgBox img {
+    max-width: 340px;
+}
+
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover {
+    transform: translateY(-15px);
+}
+
+.thumb li img {
+    max-width: 60px;
+}
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #230C02;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    z-index: 1; /* Lower z-index for navbar */
+}
+
+.navbar .logo {
+    height: 40px;
+}
+
+.navbar ul {
+    align-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    
+    padding-top: 10px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #EBD9C1;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar h2{
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #ffd700; /* Golden hover effect */
+}
+
+/* Mobile Navigation (Responsive) */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        background-color: #230C02;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar .toggle-menu {
+        display: block;
+        font-size: 1.5em;
+        color: EBD9C1;
+        cursor: pointer;
+    }
+}
+
+/* Push content to the right */
+#main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+/* The side navigation menu */
+.sidenav {
+    z-index: 9999; /* Ensure sidenav is on top */
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    top: 66px; /* Stay just below navbar */
+    left: 0;
+    background-color: #987b55; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #EBD9C1;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.toggle-btn {
+    justify: left;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-links {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.auth-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.auth-links a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* order-page/style.css */
+
+/* Set the background image for the entire page and make it fixed */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/coffee-culture-illustration-powerpoint-background_e224109f77__960_540.jpg');
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed when scrolling */
+    color: #5a3d29;
+    margin: 0;
+    padding: 0;
+  
+    /* Set a warm coffee background color */
+    background-color: #6f4f37; /* Coffee brown color */
+    background-blend-mode: multiply; /* Blends the image with the color */
+  }
+  
+  /* Content container with a more neutral beige color that blends better */
+  .container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #d7c8a3; /* Soft beige/taupe color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #5a3d29;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  p.description {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Tabs Navigation */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .tab-link {
+    background-color: #5a3d29; /* Coffee color for tab buttons */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .tab-link:hover {
+    background-color: #4a2f1a;
+  }
+  
+  .tab-link:active {
+    background-color: #3b241a;
+  }
+  
+  /* Coffee Sections */
+  .coffee-section {
+    display: none;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #5a3d29;
+    margin-bottom: 20px;
+  }
+  
+  .coffee-options {
+    display: flex;
+    justify-content: center;  /* Centers the content horizontally */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .coffee-option {
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .coffee-option img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4a2f1a;
+  }
+  
+  .order-btn {
+    background-color: #5a3d29;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .order-btn:hover {
+    background-color: #4a2f1a;
+  }
+  
+  /* Footer Styling */
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #5a3d29;
+  }
+  
+  .footer a {
+    color: #5a3d29;
+    text-decoration: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .coffee-options {
+        flex-direction: column; /* Stack the options vertically on smaller screens */
+        align-items: center;
+    }
+    .coffee-option {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+  }

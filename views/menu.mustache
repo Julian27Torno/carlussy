@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Order Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hide all sections by default */
+        .coffee-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Page Title -->
+        <h1>Welcome to Our Coffee Shop!</h1>
+        <p class="description">Explore our selection of delicious coffee options. Choose your favorite and order now!</p>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('espresso')">Espresso</a>
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('latte')">Latte</a>
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('mocha')">Mocha</a>
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('cappuccino')">Cappuccino</a>
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('americano')">Americano</a>
+            <a href="javascript:void(0)" class="tab-link" onclick="showCoffeeSection('macchiato')">Macchiato</a>
+        </div>
+
+        <!-- Espresso Section -->
+        <div class="coffee-section" id="espresso">
+            <h2>Espresso</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Espresso Classic">
+                    <h3>Espresso Classic</h3>
+                    <p class="price">₱170.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Iced Espresso">
+                    <h3>Iced Espresso</h3>
+                    <p class="price">₱195.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Espresso Double Shot">
+                    <h3>Espresso Double Shot</h3>
+                    <p class="price">₱225.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <!-- Additional Espresso Options (3 more) -->
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Espresso Long Shot">
+                    <h3>Espresso Long Shot</h3>
+                    <p class="price">₱180.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Espresso Macchiato">
+                    <h3>Espresso Macchiato</h3>
+                    <p class="price">₱220.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Affogato Espresso">
+                    <h3>Affogato Espresso</h3>
+                    <p class="price">₱250.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latte Section -->
+        <div class="coffee-section" id="latte">
+            <h2>Latte</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Classic Latte">
+                    <h3>Classic Latte</h3>
+                    <p class="price">₱225.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Iced Latte">
+                    <h3>Iced Latte</h3>
+                    <p class="price">₱255.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Caramel Latte">
+                    <h3>Caramel Latte</h3>
+                    <p class="price">₱280.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mocha Section -->
+        <div class="coffee-section" id="mocha">
+            <h2>Mocha</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Mocha Latte">
+                    <h3>Mocha Latte</h3>
+                    <p class="price">₱280.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Iced Mocha">
+                    <h3>Iced Mocha</h3>
+                    <p class="price">₱300.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="White Chocolate Mocha">
+                    <h3>White Chocolate Mocha</h3>
+                    <p class="price">₱325.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cappuccino Section -->
+        <div class="coffee-section" id="cappuccino">
+            <h2>Cappuccino</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Classic Cappuccino">
+                    <h3>Classic Cappuccino</h3>
+                    <p class="price">₱240.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Iced Cappuccino">
+                    <h3>Iced Cappuccino</h3>
+                    <p class="price">₱260.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Cinnamon Cappuccino">
+                    <h3>Cinnamon Cappuccino</h3>
+                    <p class="price">₱275.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Americano Section -->
+        <div class="coffee-section" id="americano">
+            <h2>Americano</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Classic Americano">
+                    <h3>Classic Americano</h3>
+                    <p class="price">₱210.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Iced Americano">
+                    <h3>Iced Americano</h3>
+                    <p class="price">₱235.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Macchiato Section -->
+        <div class="coffee-section" id="macchiato">
+            <h2>Macchiato</h2>
+            <div class="coffee-options">
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Classic Macchiato">
+                    <h3>Classic Macchiato</h3>
+                    <p class="price">₱250.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+                <div class="coffee-option">
+                    <img src="https://www.starbucksathome.com/ph/sites/default/files/styles/nutrition_instruction_image/public/2021-04/BlackCoffee_LongShadow_0_1_0%20%281%29.png?itok=wkv8XBvk" alt="Caramel Macchiato">
+                    <h3>Caramel Macchiato</h3>
+                    <p class="price">₱275.00</p>
+                    <a href="/order" class="order-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showCoffeeSection(section) {
+            // Hide all coffee sections
+            let sections = document.querySelectorAll('.coffee-section');
+            sections.forEach(function (sec) {
+                sec.style.display = 'none';
+            });
+
+            // Show the selected coffee section
+            let selectedSection = document.getElementById(section);
+            selectedSection.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

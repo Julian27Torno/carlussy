@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <link rel="stylesheet" href="landing-page.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Maintain aspect ratio */
+}
+
+.logo svg {
+    fill: #4a1c1c;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navlink {
+    color: black;
+    font-weight: bold;
+}
+
+.location-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-icon {
+    width: 25px;
+    height: 25px;
+    fill: #1a1a1a;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.button.primary {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+
+.button.secondary {
+    background-color: white;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    transition: all 0.2s ease;
+    border-radius : 50px;
+    font-weight: bold;
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.section:nth-child(odd) {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.section:nth-child(even) {
+    background-color: #808080;
+    color: white;
+}
+
+.section-content {
+    flex: 1;
+    text-align: center;
+}
+
+.image-placeholder {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.image-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <div class="nav-links">
+                <a href="#" class="button navlink">MENU</a>
+                <a href="#" class="button navlink">REWARDS</a>
+                <a href="#" class="button navlink">ABOUT US</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="button location-link navlink">
+                <svg class="location-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Find a store
+            </a>
+            <a href="#" class="button secondary">Sign In</a>
+            <a href="#" class="button primary">Join Now</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="section">
+            <div class="image-placeholder">
+                <svg class="image-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M21,19V5c0-1.1-0.9-2-2-2H5c-1.1,0-2,0.9-2,2v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z M8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5-4.5z" />
+                </svg>
+            </div>
+            <div class="section-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                <br>
+                <a href="#" class="button secondary">Order Now</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                <br>
+                <a href="#" class="button secondary">Order Now</a>
+            </div>
+            <div class="image-placeholder">
+                <svg class="image-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M21,19V5c0-1.1-0.9-2-2-2H5c-1.1,0-2,0.9-2,2v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z M8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5-4.5z" />
+                </svg>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="image-placeholder">
+                <svg class="image-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M21,19V5c0-1.1-0.9-2-2-2H5c-1.1,0-2,0.9-2,2v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z M8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5-4.5z" />
+                </svg>
+            </div>
+            <div class="section-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                <br>
+                <a href="#" class="button secondary">Order Now</a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

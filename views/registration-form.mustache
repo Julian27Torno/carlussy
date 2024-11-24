@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<style>
+    /* Registration Form Styling */
+    .main__container {
+        max-width: 400px;
+        width: 100%;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #230C02;
+        margin-top: 80px; /* Ensures form is below the fixed navbar */
+    }
+
+    h2 {
+        text-align: center;
+        color: #230C02;
+        margin-bottom: 20px;
+    }
+
+    div {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #230C02;
+        font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #230C02;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #3E1F14; /* Slightly darker brown border on focus */
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #230C02; /* Dark brownish button background */
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #3E1F14; /* Darker brown button hover */
+    }
+
+    .required {
+        color: red;
+    }
+</style>
+
+<body>
+
+<!-- The side navigation menu -->
+    <div id="mySidenav" class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <img src="assets/menu.png" span onclick="toggleNav()" class="toggle-btn"></span>
+        <h2>
+            <?php 
+                if (isset($_SESSION['firstname'])) {
+                    echo htmlspecialchars($_SESSION['firstname']);  // Display the user's first name
+                } else {
+                    echo "Username";  // Display default text if not logged in
+                }
+            ?>
+        </h2>
+        <ul>
+            <a href=""><img src="/assets/logo.png" class="logo" alt="Logo"></a>
+            <li><a href="">Home</a></li>
+            <li><a href="">Menu</a></li>
+            <li><a href="">FAQs</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <!-- Register and Login Buttons -->
+        <div class="auth-links">
+            <a href="/register" class="register-btn">Register</a>
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+    </nav>
+    <div class="main__container">
+        <h2>Registration Form</h2>
+
+        <form action="/register" method="POST">
+            <div>
+                <label for="first_name">First Name <span class="required">*</span></label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            <div>
+                <label for="last_name">Last Name <span class="required">*</span></label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+    
+            <div>
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barako</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-png" href="assets/Favicon.png">
+</head>
+<body>
+    <!-- The side navigation menu -->
+    <div id="mySidenav" class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <img src="assets/menu.png" span onclick="toggleNav()" class="toggle-btn"></span>
+        <h2>
+            <?php 
+                if (isset($_SESSION['firstname'])) {
+                    echo htmlspecialchars($_SESSION['firstname']);  // Display the user's first name
+                } else {
+                    echo "Username";  // Display default text if not logged in
+                }
+            ?>
+        </h2>
+        <ul>
+            <a href=""><img src="/assets/logo.png" class="logo" alt="Logo"></a>
+            <li><a href="">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="">FAQs</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <!-- Register and Login Buttons -->
+        <div class="auth-links">
+            <a href="/register" class="register-btn">Register</a>
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- Existing Content -->
+    <section>
+        <div class="circle"></div>
+        <header></header>
+        <div class="content">
+            <div class="textBox">
+                <h2>It's Not Just A Coffee <br> It's <span>Barako</span></h2>
+                <p>Barako coffee: A symphony of taste and ethics.
+                    Crafted with care from sustainably sourced beans, their roasts offer a range of delightful flavors.
+                    Enter a warm, inspiring space where baristas create personalized cups of joy.
+                    Beyond coffee, Barako fosters positive change through community support.</p>
+                <a href="">Know More</a>
+            </div>
+        </div>
+        <div class="imgBox">
+            <img src="assets/frappe.png" class="starbucks">
+        </div>
+        <ul class="thumb">
+            <li><img src="./assets/thumb1.png" onclick="imgSlider('./assets/img1.png')"></li>
+            <li><img src="./assets/thumb2.png" onclick="imgSlider('./assets/img2.png')"></li>
+            <li><img src="./assets/thumb3.png" onclick="imgSlider('./assets/img3.png')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href=""><img src="assets/fb.png"></a></li>
+            <li><a href=""><img src="assets/x.png"></a></li>
+            <li><a href=""><img src="assets/ig.png"></a></li>
+        </ul>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js">
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

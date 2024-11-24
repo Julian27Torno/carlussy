@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>Menu</h1>
+
+    <?php if (isset($success)): ?>
+        <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
+    <?php endif; ?>
+
+    <h2>Menu Items</h2>
+    <ul>
+        <?php if (!empty($menuItems)): ?>
+            <?php foreach ($menuItems as $item): ?>
+                <li>
+                    <strong><?php echo htmlspecialchars($item['Name']); ?></strong><br>
+                    Type: <?php echo htmlspecialchars($item['Type']); ?><br>
+                    Price: $<?php echo number_format($item['Price'], 2); ?><br>
+                    <?php if (!empty($item['Image'])): ?>
+                        <img src="<?php echo htmlspecialchars($item['Image']); ?>" alt="<?php echo htmlspecialchars($item['Name']); ?>" style="width: 150px; height: auto;"><br>
+                    <?php else: ?>
+                        <p>No image available</p>
+                    <?php endif; ?>
+                    <hr>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No menu items found.</p>
+        <?php endif; ?>
+    </ul>
+</body>
+</html>
