@@ -1,7 +1,9 @@
 <?php
 namespace App\Controllers;
 
+
 use App\Models\MenuModel;
+use App\Models\Order;
 use PDO;
 use Dotenv\Dotenv;
 
@@ -13,7 +15,8 @@ class OrderController extends BaseController
     public function __construct()
     {
         // Load .env variables from the config folder (adjust path if needed)
-        $dotenv = Dotenv::createImmutable(__DIR__ . '.env'); // Path to your .env file
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../../'); // Adjust path to the root folder of "finals"
+ // Path to your .env file
         $dotenv->load();
 
         // Get database connection details from the .env file
@@ -48,23 +51,31 @@ class OrderController extends BaseController
     public function submitOrder()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Handle order submission
             $name = $_POST['name'] ?? '';
             $email = $_POST['email'] ?? '';
-            $item = $_POST['item'] ?? '';
-            
-            // Simulate success
-            $success = "Order submitted successfully!";
-            
-            // Fetch all menu items again for the view
+            $menuItemId = $_POST['item'] ?? 0;
+            $quantity = $_POST['quantity'] ?? 1;
+
+            // Fetch menu item price to calculate total price
+            $menuItem = $this->menuModel->getMenuItemById($menuItemId);
+            if ($menuItem) {
+                $totalPrice = $menuItem['price'] * $quantity;
+
+                // Create the order
+                $this->orderModel->createOrder($name, $email, $menuItemId, $quantity, $totalPrice);
+
+                $success = "Order submitted successfully!";
+            } else {
+                $success = "Invalid menu item selected.";
+            }
+
+            // Fetch menu items and render the view
             $menuItems = $this->menuModel->getAllMenuItems();
-            
-            // Render view with success message
             return $this->render('order', ['success' => $success, 'menuItems' => $menuItems]);
         }
 
-        // Redirect to order page if not POST
         header('Location: /order');
         exit;
     }
+    
 }

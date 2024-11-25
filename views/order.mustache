@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .menu-item {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Menu</h1>
 
+    <!-- Success Message -->
     <?php if (isset($success)): ?>
         <p style="color: green;"><?php echo htmlspecialchars($success); ?></p>
     <?php endif; ?>
@@ -16,12 +29,12 @@
     <ul>
         <?php if (!empty($menuItems)): ?>
             <?php foreach ($menuItems as $item): ?>
-                <li>
-                    <strong><?php echo htmlspecialchars($item['Name']); ?></strong><br>
-                    Type: <?php echo htmlspecialchars($item['Type']); ?><br>
-                    Price: $<?php echo number_format($item['Price'], 2); ?><br>
-                    <?php if (!empty($item['Image'])): ?>
-                        <img src="<?php echo htmlspecialchars($item['Image']); ?>" alt="<?php echo htmlspecialchars($item['Name']); ?>" style="width: 150px; height: auto;"><br>
+                <li class="menu-item">
+                    <strong><?php echo htmlspecialchars($item['name']); ?></strong><br>
+                    Type: <?php echo isset($item['type']) ? htmlspecialchars($item['type']) : 'N/A'; ?><br>
+                    Price: $<?php echo number_format($item['price'], 2); ?><br>
+                    <?php if (!empty($item['image'])): ?>
+                        <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>"><br>
                     <?php else: ?>
                         <p>No image available</p>
                     <?php endif; ?>
